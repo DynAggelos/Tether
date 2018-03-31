@@ -12,24 +12,16 @@
 TetherTextCtrl::TetherTextCtrl(
     wxWindow* parent,
     const int& id,
-    const wxString& title,
     const wxPoint& position,
     const wxSize& size)
-    : wxTextCtrl(
+    : wxStyledTextCtrl(
         parent,
         id,
-        title,
         position,
-        size,
-        (wxTE_MULTILINE | wxTE_RICH | wxTE_NOHIDESEL))
-{}
+        size)
+{
+    // Default Styling
+}
 
 TetherTextCtrl::~TetherTextCtrl()
 {}
-
-/* bool wxTextCtrl::LoadFile(
-    const wxString& filename,
-    int fileType = wxTEXT_TYPE_ANY)
-{
-
-}*/

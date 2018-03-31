@@ -16,7 +16,8 @@ TetherFileFrame::TetherFileFrame(
     const wxString& fileOperation)
 : wxFrame(parent, id, title)
 {
-    this->SetMinSize(wxSize(750, 500));
+    this->SetSize(wxSize(600, 500));
+    this->SetMinSize(wxSize(400, 400));
     this->Center(wxBOTH);
 
     /* Instantiate File Dialogue */
@@ -25,16 +26,14 @@ TetherFileFrame::TetherFileFrame(
     if (fileDialogue->ShowModal() != wxID_CANCEL)
     {
         /* Populate filePaths */
-        fileDialogue->GetPath(filePath);;
+        filePath = fileDialogue->GetPath();
     }
 }
 
 TetherFileFrame::~TetherFileFrame()
-{}
-
-inline const wxArrayString& TetherFileFrame::getFilePath()
 {
-    return filePath;
+    delete fileDialogue;
+    fileDialogue = nullptr;
 }
 
 void TetherFileFrame::createFileDialogue(const wxString& fileOperation)

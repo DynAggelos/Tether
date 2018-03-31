@@ -33,8 +33,11 @@ class TetherFrame: public wxFrame
 
         TetherFileFrame* fileFrame = nullptr;
 
-        /* Stack Objects */
-        wxArrayString filePaths;
+        wxMessageDialog* noticeBox = nullptr;
+
+        /* Objects (in Stack) */
+        wxString filePath;
+        wxString textBox1LoadPath;
 
         /* Creation Member Functions */
         void createMenu();
@@ -42,5 +45,7 @@ class TetherFrame: public wxFrame
         /* Event-Handling Member Functions */
         void onNewFile(const wxCommandEvent& event);
         void onOpenFile(const wxCommandEvent& event);
+        void onSaveFile(const wxCommandEvent& event);
+        void onSaveAsFile(const wxCommandEvent& event);
         void OnClose(const wxCloseEvent& event);
 };

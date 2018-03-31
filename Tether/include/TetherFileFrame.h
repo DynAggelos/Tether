@@ -23,14 +23,17 @@ class TetherFileFrame : public wxFrame
             const wxString& fileOperation);
         ~TetherFileFrame();
 
-        const wxArrayString& getFilePath();
+        const wxString& getFilePath()
+        {
+            return filePath;
+        }
 
     private:
-        /* Pointers to Objects */
+        /* Class Pointers */
         wxFileDialog* fileDialogue = nullptr;
 
-        /* Static Objects */
-        wxArrayString filePath;
+        /* Objects (in Stack) */
+        wxString filePath;
 
         /* Creation Member Functions */
         void createFileDialogue(const wxString& fileOperation);

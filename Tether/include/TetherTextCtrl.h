@@ -13,13 +13,12 @@
 #   include <wx/wx.h>
 #endif // WX_PRECOMP
 
-class TetherTextCtrl : public wxTextCtrl
+class TetherTextCtrl : public wxStyledTextCtrl
 {
     public:
         TetherTextCtrl(
             wxWindow* parent,
             const int& id,
-            const wxString& title,
             const wxPoint& position = wxDefaultPosition,
             const wxSize& size = wxDefaultSize);
         ~TetherTextCtrl();

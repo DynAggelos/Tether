@@ -21,7 +21,8 @@ TetherFrame::TetherFrame()
     : wxFrame(NULL, -1, _("Tether"))
 {
     /* Position and Size Frame */
-    this->SetMinSize(wxSize(750, 500));
+    this->SetSize(wxSize(700, 600));
+    this->SetMinSize(wxSize(400, 400));
     this->Center(wxBOTH);
 
     /* Create Menu Bar Above */
@@ -34,7 +35,6 @@ TetherFrame::TetherFrame()
     textBox1 = new TetherTextCtrl(
         this,
         -1,
-        _("---"),
         wxDefaultPosition,
         wxDefaultSize);
 
@@ -45,6 +45,8 @@ TetherFrame::TetherFrame()
     // Menu Bindings
     Bind(wxEVT_MENU, &TetherFrame::onNewFile, this, wxID_NEW);
     Bind(wxEVT_MENU, &TetherFrame::onOpenFile, this, wxID_OPEN);
+    Bind(wxEVT_MENU, &TetherFrame::onSaveFile, this, wxID_SAVE);
+    Bind(wxEVT_MENU, &TetherFrame::onSaveAsFile, this, wxID_SAVEAS);
 }
 
 /* Destructor: ~TetherFrame() *********************************************
@@ -73,6 +75,10 @@ void TetherFrame::createMenu()
     fileMenu->Append(wxID_NEW, _("New"), _("Start a new file"));
     fileMenu->Append(wxID_OPEN, _("Open"), _("Open an existing file"));
     fileMenu->Append(wxID_SAVE, _("Save"), _("Save an open file"));
+    fileMenu->Append(
+        wxID_SAVEAS,
+        _("Save As"),
+        _("Specify how to save an open file"));
 
     /* Create Tools Menu */
     toolsMenu = new wxMenu();
@@ -98,11 +104,12 @@ void TetherFrame::createMenu()
 void TetherFrame::onNewFile(const wxCommandEvent& event)
 {
     textBox1->Clear();
+    textBox1->MarkDirty();
 }
 
 /* Member Function: onOpenFile() ******************************************
  * Creates a new file window frame when the associated menu event takes
- * place.
+ * place. Loads the selected file into textBox1.
  *-------------------------------------------------------------------------
  * Parameters:
  *      event -- A parameter required by wxWidgets
@@ -110,22 +117,122 @@ void TetherFrame::onNewFile(const wxCommandEvent& event)
  *************************************************************************/
 void TetherFrame::onOpenFile(const wxCommandEvent& event)
 {
+    /* Warning Box if Unsaved Content */
     if (textBox1->IsModified())
     {
-        // Dialogue box about losing changes
+        noticeBox = new wxMessageDialog(
+            this,
+            _("There are unsaved changes at the moment."),
+            wxMessageBoxCaptionStr,
+            wxOK | wxICON_WARNING | wxCENTRE);
+        noticeBox->ShowModal();
+
+        // Clear Memory Once Selection Chosen
+        delete noticeBox;
+        noticeBox = nullptr;
     }
-    
+
+    /* Instantiate File Frame and Process Choice */
     fileFrame = new TetherFileFrame(
         this,
         wxID_AUTO_HIGHEST,
         _("Load"),
         wxT("load"));
-    
-    filePaths = fileFrame->getFilePaths();
 
-    for (unsigned short i = 0; i < (filePaths.GetCount()); i++)
+    /* Get Chosen File Path for Processing */
+    filePath = fileFrame->getFilePath();
+
+    /* If Cancel Was Chosen */
+    if (filePath == wxT(""))
     {
-        textBox1->LoadFile(filePaths.Index(i));
+        // Do nothing
+    }
+
+    /* If File Doesn't Exist */
+    else if (wxFileExists(filePath) == false)
+    {
+        noticeBox = new wxMessageDialog(
+            this,
+            _("Oops! That file couldn't be loaded."),
+            wxMessageBoxCaptionStr,
+            wxOK | wxICON_ERROR | wxCENTRE);
+        noticeBox->ShowModal();
+
+        // Clear Memory Once Selection Chosen
+        delete noticeBox;
+        noticeBox = nullptr;
+    }
+
+    /* Else Load File into Text Box 1 */
+    else
+    {
+        textBox1->LoadFile(filePath);
+        textBox1LoadPath = filePath;
+    }
+}
+
+/* Member Function: onSaveFile() ******************************************
+ * Saves the file from textBox1 with the same path it was opened with.
+ *-------------------------------------------------------------------------
+ * Parameters:
+ *      event -- A parameter required by wxWidgets
+ * Returns: void
+ *************************************************************************/
+void TetherFrame::onSaveFile(const wxCommandEvent& event)
+{
+    /* Don't Save if No Changes */
+    if (textBox1->IsModified() == false)
+    {
+        // Do nothing
+    }
+
+    /* Proceed with Save if Changes */
+    else
+    {
+        textBox1->SaveFile(textBox1LoadPath);
+    }
+}
+
+/* Member Function: onSaveAsFile() ****************************************
+ * Creates a new file window frame when the associated menu event takes
+ * place. Saves the file from textBox1 as specified.
+ *-------------------------------------------------------------------------
+ * Parameters:
+ *      event -- A parameter required by wxWidgets
+ * Returns: void
+ *************************************************************************/
+void TetherFrame::onSaveAsFile(const wxCommandEvent& event)
+{
+    /* Don't Save if No Changes */
+    if (textBox1->IsModified() == false)
+    {
+        // Do nothing
+    }
+
+    /* Proceed with Save if Changes */
+    else
+    {
+        /* Instantiate File Frame and Process Choice */
+        fileFrame = new TetherFileFrame(
+            this,
+            wxID_AUTO_HIGHEST,
+            _("Save"),
+            wxT("save"));
+        
+        /* Get Chosen File Path for Processing */
+        filePath = fileFrame->getFilePath();
+
+        /* If Cancel Was Chosen */
+        if (filePath == wxT(""))
+        {
+            // Do nothing
+        }
+
+        /* Else Save File */
+        else
+        {
+            textBox1->SaveFile(filePath);
+        }
     }
 }
 

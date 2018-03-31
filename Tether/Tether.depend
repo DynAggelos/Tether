@@ -1719,17 +1719,25 @@
 1520569062 /home/joshua/FinalApp/Tether/include/TetherApp.h
 	<wx/wx.h>
 
-1521966135 /home/joshua/FinalApp/Tether/include/TetherFrame.h
+1522486285 /home/joshua/FinalApp/Tether/include/TetherFrame.h
 	"TetherTextCtrl.h"
 	"TetherFileFrame.h"
 	<wx/wx.h>
 
-1521626205 /home/joshua/FinalApp/Tether/include/TetherTextCtrl.h
+1522488447 /home/joshua/FinalApp/Tether/include/TetherTextCtrl.h
 	<wx/wx.h>
 
-1522402709 /home/joshua/FinalApp/Tether/include/TetherFileFrame.h
+1522469842 /home/joshua/FinalApp/Tether/include/TetherFileFrame.h
 	<wx/wx.h>
 
 1521626205 source:/home/joshua/FinalApp/Tether/src/TetherTextCtrl.cpp
 	"TetherTextCtrl.h"
+
+1522483569 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
+	"TetherFileFrame.h"
+
+1522488140 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
+	"TetherFrame.h"
+	"TetherTextCtrl.h"
+	"TetherFileFrame.h"
 
