@@ -20,7 +20,18 @@ TetherTextCtrl::TetherTextCtrl(
         position,
         size)
 {
-    // Default Styling
+    /* Settings ---------------------------------------------------------*/
+    /* Margins */
+    //this->SetMarginLeft(0);
+    this->SetMarginWidth(margin1, margin1Width);    // Set margin to x px's
+    this->SetMarginSensitive(margin1, true);        // no clicking margin
+    this->SetMarginType(margin1, wxSTC_MARGIN_NUMBER);
+    this->SetMarginCursor(margin1, wxSTC_CURSORARROW);
+
+    /* Word Wrap */
+    this->SetWrapMode(wxSTC_WRAP_WORD);
+    this->SetWrapIndentMode(wxSTC_WRAPINDENT_SAME);
+    this->SetWrapVisualFlags(wxSTC_WRAPVISUALFLAG_MARGIN);
 }
 
 TetherTextCtrl::~TetherTextCtrl()

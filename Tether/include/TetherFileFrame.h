@@ -9,9 +9,13 @@
 
 #pragma once
 
-#ifndef WX_PRECOMP
-#   include <wx/wx.h>
-#endif // WX_PRECOMP
+#ifndef WX_FRAME
+#   include <wx/frame.h>
+#endif // WX_FRAME
+
+#ifndef WX_FILE_DLG
+#   include <wx/filedlg.h>
+#endif // WX_FILE_DLG
 
 class TetherFileFrame : public wxFrame
 {

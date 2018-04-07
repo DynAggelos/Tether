@@ -33,10 +33,7 @@ TetherFrame::TetherFrame()
 
     /* Set up textBox1 */
     textBox1 = new TetherTextCtrl(
-        this,
-        -1,
-        wxDefaultPosition,
-        wxDefaultSize);
+        this);
 
     /* Bind Events */
     // Frame Binding
@@ -103,8 +100,11 @@ void TetherFrame::createMenu()
  *************************************************************************/
 void TetherFrame::onNewFile(const wxCommandEvent& event)
 {
-    textBox1->Clear();
-    textBox1->MarkDirty();
+    textBox1->ClearAll();
+    if (textBox1->IsModified())
+    {
+        textBox1->DiscardEdits();
+    }
 }
 
 /* Member Function: onOpenFile() ******************************************
@@ -203,36 +203,26 @@ void TetherFrame::onSaveFile(const wxCommandEvent& event)
  *************************************************************************/
 void TetherFrame::onSaveAsFile(const wxCommandEvent& event)
 {
-    /* Don't Save if No Changes */
-    if (textBox1->IsModified() == false)
+    /* Instantiate File Frame and Process Choice */
+    fileFrame = new TetherFileFrame(
+        this,
+        wxID_AUTO_HIGHEST,
+        _("Save"),
+        wxT("save"));
+    
+    /* Get Chosen File Path for Processing */
+    filePath = fileFrame->getFilePath();
+
+    /* If Cancel Was Chosen */
+    if (filePath == wxT(""))
     {
         // Do nothing
     }
 
-    /* Proceed with Save if Changes */
+    /* Else Save File */
     else
     {
-        /* Instantiate File Frame and Process Choice */
-        fileFrame = new TetherFileFrame(
-            this,
-            wxID_AUTO_HIGHEST,
-            _("Save"),
-            wxT("save"));
-        
-        /* Get Chosen File Path for Processing */
-        filePath = fileFrame->getFilePath();
-
-        /* If Cancel Was Chosen */
-        if (filePath == wxT(""))
-        {
-            // Do nothing
-        }
-
-        /* Else Save File */
-        else
-        {
-            textBox1->SaveFile(filePath);
-        }
+        textBox1->SaveFile(filePath);
     }
 }
 

@@ -9,9 +9,9 @@
 
 #pragma once
 
-#ifndef WX_PRECOMP
-#   include <wx/wx.h>
-#endif // WX_PRECOMP
+#ifndef WX_APP
+#   include <wx/app.h>
+#endif // WX_APP
 
 class TetherApp : public wxApp
 {

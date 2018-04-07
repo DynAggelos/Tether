@@ -12,11 +12,19 @@
 #include "TetherTextCtrl.h"
 #include "TetherFileFrame.h"
 
-#ifndef WX_PRECOMP
-#   include <wx/wx.h>
-#endif // WX_PRECOMP
+#ifndef WX_FRAME
+#   include <wx/frame.h>
+#endif // WX_FRAME
 
-class TetherFrame: public wxFrame
+#ifndef WX_MSG_DLG
+#   include <wx/msgdlg.h>
+#endif // WX_MSG_DLG
+
+#ifndef WX_MENU
+#   include <wx/menu.h>
+#endif // WX_MENU
+
+class TetherFrame : public wxFrame
 {
     public:
         TetherFrame();
