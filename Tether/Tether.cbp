@@ -33,16 +33,13 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="`wx-config --cflags`" />
 			<Add option="-Wall" />
 		</Compiler>
-		<Linker>
-			<Add option="`wx-config --libs`" />
-		</Linker>
 		<Unit filename="include/TetherApp.h" />
 		<Unit filename="include/TetherFileFrame.h" />
 		<Unit filename="include/TetherFrame.h" />
 		<Unit filename="include/TetherTextCtrl.h" />
+		<Unit filename="include/Untitled.xpm" />
 		<Unit filename="src/TetherApp.cpp" />
 		<Unit filename="src/TetherFileFrame.cpp" />
 		<Unit filename="src/TetherFrame.cpp" />

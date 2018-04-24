@@ -1716,15 +1716,17 @@
 	"TetherApp.h"
 	"TetherFrame.h"
 
-1523091911 /home/joshua/FinalApp/Tether/include/TetherApp.h
+1523925975 /home/joshua/FinalApp/Tether/include/TetherApp.h
 	<wx/app.h>
 
-1523091874 /home/joshua/FinalApp/Tether/include/TetherFrame.h
+1524374855 /home/joshua/FinalApp/Tether/include/TetherFrame.h
 	"TetherTextCtrl.h"
 	"TetherFileFrame.h"
 	<wx/frame.h>
 	<wx/msgdlg.h>
 	<wx/menu.h>
+	<wx/toolbar.h>
+	<wx/bitmap.h>
 
 1523090941 /home/joshua/FinalApp/Tether/include/TetherTextCtrl.h
 	<wx/stc/stc.h>
@@ -1739,10 +1741,11 @@
 1522483569 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
 	"TetherFileFrame.h"
 
-1523090809 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
+1524376950 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
 	"TetherFrame.h"
 	"TetherTextCtrl.h"
 	"TetherFileFrame.h"
+	"Untitled.xpm"
 
 1491890964 /usr/include/wx-3.0/wx/stc/stc.h
 	"wx/defs.h"
@@ -1773,4 +1776,6 @@
 	"TetherOptionsFrame.h"
 
 1523091462 /home/joshua/FinalApp/Tether/include/TetherOptionsFrame.h
+
+1524375866 /home/joshua/FinalApp/Tether/include/Untitled.xpm
 

@@ -56,6 +56,10 @@ wxIMPLEMENT_APP(TetherApp);
 
 bool TetherApp::OnInit()
 {
+    /* Set Up Handlers */
+    // Image Handlers
+    wxImage::AddHandler(new wxXPMHandler);
+    
     /* Instantiate Main Window */
     TetherFrame *mainWindow = new TetherFrame();
 

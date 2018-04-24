@@ -24,6 +24,14 @@
 #   include <wx/menu.h>
 #endif // WX_MENU
 
+#ifndef WX_TOOLBAR
+#   include <wx/toolbar.h>
+#endif // WX_TOOLBAR
+
+#ifndef WX_BITMAP
+#   include <wx/bitmap.h>
+#endif // WX_BITMAP
+
 class TetherFrame : public wxFrame
 {
     public:
@@ -32,16 +40,26 @@ class TetherFrame : public wxFrame
 
     private:
         /* Class Pointers */
+        // Menu Pointers
         wxMenuBar* menuBar = nullptr;
         wxMenu* fileMenu = nullptr;
         wxMenu* toolsMenu = nullptr;
 
+        // Text Box Pointers
         TetherTextCtrl* textBox1 = nullptr;
         TetherTextCtrl* textBox2 = nullptr;
 
+        // File-Frame Pointers
         TetherFileFrame* fileFrame = nullptr;
 
+        // Dialogue Pointers
         wxMessageDialog* noticeBox = nullptr;
+
+        // Bitmap Pointers
+        wxBitmap* toolBitmaps[3] = {nullptr, nullptr, nullptr};
+
+        // Toolbar Pointers
+        wxToolBar* toolbar = nullptr;
 
         /* Objects (in Stack) */
         wxString filePath;
@@ -49,6 +67,7 @@ class TetherFrame : public wxFrame
 
         /* Creation Member Functions */
         void createMenu();
+        void createToolbar();
 
         /* Event-Handling Member Functions */
         void onNewFile(const wxCommandEvent& event);

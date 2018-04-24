@@ -11,6 +11,8 @@
 #include "TetherTextCtrl.h"
 #include "TetherFileFrame.h"
 
+#include "Untitled.xpm"
+
 /* Constructor: TetherFrame() *********************************************
  * Creates and binds all the elements of the main window frame in the app.
  *-------------------------------------------------------------------------
@@ -30,6 +32,9 @@ TetherFrame::TetherFrame()
 
     /* Create Status Bar Below */
     this->CreateStatusBar(2);
+
+    /* Create Toolbar */
+    this->createToolbar();
 
     /* Set up textBox1 */
     textBox1 = new TetherTextCtrl(
@@ -56,7 +61,7 @@ TetherFrame::~TetherFrame()
 {}
 
 /* Member Function: createMenu() ******************************************
- * Handles the creation of the menu and all of its objects.
+ * Handles the creation of the menubar and all of its objects.
  *-------------------------------------------------------------------------
  * Parameters: void
  * Returns: void
@@ -89,6 +94,29 @@ void TetherFrame::createMenu()
 
     /* Associate Menubar with Frame */
     this->SetMenuBar(menuBar);
+}
+
+/* Member Function: createToolbar() ***************************************
+ * Handles the creation of the toolbar and all of its objects.
+ *-------------------------------------------------------------------------
+ * Parameters: void
+ * Returns: void
+ *************************************************************************/
+void TetherFrame::createToolbar()
+{
+    /* Instantiate Toolbar Bitmaps */
+    toolBitmaps[0] = new wxBitmap(Untitled_xpm);
+
+    /* Instantiate Toolbar */
+    toolbar = this->CreateToolBar(wxTB_DEFAULT_STYLE | wxTB_TOP);
+    toolbar->AddTool(
+        wxID_ANY,
+        _("Undo"),
+        (const char**) toolBitmaps[0],
+        _("Undo operation"));
+    
+    /* Display Toolbar */
+    toolbar->Realize();
 }
 
 /* Member Function: onNewFile() *******************************************
@@ -209,7 +237,7 @@ void TetherFrame::onSaveAsFile(const wxCommandEvent& event)
         wxID_AUTO_HIGHEST,
         _("Save"),
         wxT("save"));
-    
+
     /* Get Chosen File Path for Processing */
     filePath = fileFrame->getFilePath();
 
