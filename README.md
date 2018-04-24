@@ -5,9 +5,9 @@ Tether is a simple text editor, which will serve as a front-end for specialized 
 
 At the time of this writing, Tether is a school project.
 
-*Works On*: Linux
+**Works On**: Linux
 
-*Requires*: libwxgtk-media3.0-0v5, libwxgtk-webview3.0-0v5, and libwxgtk3.0-0v5
+**Requires**: *libwxgtk-media3.0-0v5*, *libwxgtk-webview3.0-0v5*, and *libwxgtk3.0-0v5*
 
 ### Features
 * Clear ("New")
