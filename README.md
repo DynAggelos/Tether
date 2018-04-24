@@ -1,7 +1,7 @@
 ## Tether
 **Author**: Joshua Gerrity
 
-Tether is a simple text editor front-end for specialized text processing tools, which will originate in the [The Textual Toolbox](https://github.com/DynAggelos/The-Textual-Toolbox) Suite. Tether is written in C++, using the wxWidgets library.
+Tether is a simple text editor, which will serve as a front-end for specialized text processing tools. These tools will originate in the [The Textual Toolbox](https://github.com/DynAggelos/The-Textual-Toolbox) Suite. Tether is written in C++, using the wxWidgets library.
 
 At the time of this writing, Tether is a school project.
 
