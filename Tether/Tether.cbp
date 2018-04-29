@@ -38,11 +38,14 @@
 		<Unit filename="include/TetherApp.h" />
 		<Unit filename="include/TetherFileFrame.h" />
 		<Unit filename="include/TetherFrame.h" />
+		<Unit filename="include/TetherOptionsDialogue.h" />
 		<Unit filename="include/TetherTextCtrl.h" />
-		<Unit filename="include/Untitled.xpm" />
+		<Unit filename="include/imgs/RedoImage.xpm" />
+		<Unit filename="include/imgs/UndoImage.xpm" />
 		<Unit filename="src/TetherApp.cpp" />
 		<Unit filename="src/TetherFileFrame.cpp" />
 		<Unit filename="src/TetherFrame.cpp" />
+		<Unit filename="src/TetherOptionsDialogue.cpp" />
 		<Unit filename="src/TetherTextCtrl.cpp" />
 		<Extensions>
 			<code_completion />

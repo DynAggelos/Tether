@@ -12,7 +12,7 @@ At the time of this writing, Tether is a school project.
 ### Features
 * Clear ("New")
 * File Input/Output (Open, Save, Save As)
-* Undo/Redo (keyboard shortcuts [CTRL+Z/CTRL+Y] and shortcut menu only)
+* Undo/Redo
 * Tabs and Multiline Indenting/Unindenting (TAB/SHIFT+TAB)
 * Left-Column Line Count
 * Wordwrap by Default
