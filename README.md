@@ -24,5 +24,5 @@ At the time of this writing, Tether is a school project.
 * Default Windows Newline (for Cross-Platform Files)
 * Options Menu for Changing Default Settings
 * Advanced Find and Replace
-* Greek Text Processor and Converter
+* [Greek Text Processor and Converter](https://github.com/DynAggelos/The-Textual-Toolbox#greek-text-processor-and-converter)
 * Possible HTML/CSS Highlighting

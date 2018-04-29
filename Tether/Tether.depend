@@ -1,48 +1,90 @@
 # depslib dependency file v1.0
-1520506452 source:/home/joshua/Tether/TetherApp.cpp
+1524990746 source:/home/joshua/FinalApp/Tether/src/TetherApp.cpp
+	<wx/wx.h>
 	"wx_pch.h"
 	"TetherApp.h"
 	"TetherFrame.h"
 
-1520503839 /home/joshua/Tether/TetherApp.h
-	<wx/app.h>
-	<wx/event.h>
-
-1491890964 /usr/include/wx-3.0/wx/app.h
-	"wx/event.h"
-	"wx/eventfilter.h"
-	"wx/build.h"
-	"wx/cmdargs.h"
-	"wx/init.h"
+1491890964 /usr/include/wx-3.0/wx/wx.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/dynarray.h"
+	"wx/list.h"
+	"wx/hash.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+	"wx/arrstr.h"
 	"wx/intl.h"
 	"wx/log.h"
-	"wx/unix/app.h"
-	"wx/msw/app.h"
-	"wx/motif/app.h"
-	"wx/dfb/app.h"
-	"wx/gtk/app.h"
-	"wx/gtk1/app.h"
-	"wx/x11/app.h"
-	"wx/osx/app.h"
-	"wx/cocoa/app.h"
-	"wx/os2/app.h"
-	"wx/univ/theme.h"
-
-1491890964 /usr/include/wx-3.0/wx/event.h
-	"wx/defs.h"
-	"wx/cpp.h"
-	"wx/object.h"
-	"wx/clntdata.h"
+	"wx/event.h"
+	"wx/app.h"
+	"wx/utils.h"
+	"wx/stream.h"
+	"wx/memory.h"
+	"wx/math.h"
+	"wx/stopwatch.h"
+	"wx/timer.h"
+	"wx/module.h"
+	"wx/wxcrt.h"
+	"wx/wxcrtvararg.h"
+	"wx/window.h"
+	"wx/containr.h"
+	"wx/panel.h"
+	"wx/toplevel.h"
+	"wx/frame.h"
 	"wx/gdicmn.h"
+	"wx/gdiobj.h"
+	"wx/region.h"
+	"wx/bitmap.h"
+	"wx/image.h"
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/dc.h"
+	"wx/dcclient.h"
+	"wx/dcmemory.h"
+	"wx/dcprint.h"
+	"wx/dcscreen.h"
+	"wx/button.h"
+	"wx/menuitem.h"
+	"wx/menu.h"
+	"wx/pen.h"
+	"wx/brush.h"
+	"wx/palette.h"
+	"wx/icon.h"
 	"wx/cursor.h"
-	"wx/mousestate.h"
-	"wx/dynarray.h"
-	"wx/thread.h"
-	"wx/tracker.h"
-	"wx/typeinfo.h"
-	"wx/any.h"
-	"wx/meta/convertible.h"
-	"wx/meta/removeref.h"
+	"wx/dialog.h"
+	"wx/settings.h"
+	"wx/msgdlg.h"
+	"wx/dataobj.h"
+	"wx/control.h"
+	"wx/ctrlsub.h"
+	"wx/bmpbuttn.h"
+	"wx/checkbox.h"
+	"wx/checklst.h"
+	"wx/choice.h"
+	"wx/scrolbar.h"
+	"wx/stattext.h"
+	"wx/statbmp.h"
+	"wx/statbox.h"
+	"wx/listbox.h"
+	"wx/radiobox.h"
+	"wx/radiobut.h"
+	"wx/textctrl.h"
+	"wx/slider.h"
+	"wx/gauge.h"
+	"wx/scrolwin.h"
+	"wx/dirdlg.h"
+	"wx/toolbar.h"
+	"wx/combobox.h"
+	"wx/layout.h"
+	"wx/sizer.h"
+	"wx/statusbr.h"
+	"wx/choicdlg.h"
+	"wx/textdlg.h"
+	"wx/filedlg.h"
+	"wx/mdi.h"
+	"wx/validate.h"
+	"wx/valtext.h"
 
 1491890964 /usr/include/wx-3.0/wx/defs.h
 	"wx/platform.h"
@@ -455,6 +497,27 @@
 	"wx/defs.h"
 	"wx/xti.h"
 
+1491890964 /usr/include/wx-3.0/wx/hash.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/object.h"
+
+1491890964 /usr/include/wx-3.0/wx/event.h
+	"wx/defs.h"
+	"wx/cpp.h"
+	"wx/object.h"
+	"wx/clntdata.h"
+	"wx/gdicmn.h"
+	"wx/cursor.h"
+	"wx/mousestate.h"
+	"wx/dynarray.h"
+	"wx/thread.h"
+	"wx/tracker.h"
+	"wx/typeinfo.h"
+	"wx/any.h"
+	"wx/meta/convertible.h"
+	"wx/meta/removeref.h"
+
 1491890964 /usr/include/wx-3.0/wx/clntdata.h
 	"wx/defs.h"
 	"wx/string.h"
@@ -562,6 +625,26 @@
 
 1491890964 /usr/include/wx-3.0/wx/meta/removeref.h
 
+1491890964 /usr/include/wx-3.0/wx/app.h
+	"wx/event.h"
+	"wx/eventfilter.h"
+	"wx/build.h"
+	"wx/cmdargs.h"
+	"wx/init.h"
+	"wx/intl.h"
+	"wx/log.h"
+	"wx/unix/app.h"
+	"wx/msw/app.h"
+	"wx/motif/app.h"
+	"wx/dfb/app.h"
+	"wx/gtk/app.h"
+	"wx/gtk1/app.h"
+	"wx/x11/app.h"
+	"wx/osx/app.h"
+	"wx/cocoa/app.h"
+	"wx/os2/app.h"
+	"wx/univ/theme.h"
+
 1491890964 /usr/include/wx-3.0/wx/eventfilter.h
 	"wx/defs.h"
 
@@ -580,98 +663,6 @@
 	<signal.h>
 
 1491890964 /usr/include/wx-3.0/wx/gtk/app.h
-
-1520151087 /user/joshua/Tether/TetherMain.h
-	<wx/wx.h>
-	"TetherApp.h"
-	<wx/button.h>
-	<wx/statline.h>
-
-1491890964 /usr/include/wx-3.0/wx/wx.h
-	"wx/defs.h"
-	"wx/object.h"
-	"wx/dynarray.h"
-	"wx/list.h"
-	"wx/hash.h"
-	"wx/string.h"
-	"wx/hashmap.h"
-	"wx/arrstr.h"
-	"wx/intl.h"
-	"wx/log.h"
-	"wx/event.h"
-	"wx/app.h"
-	"wx/utils.h"
-	"wx/stream.h"
-	"wx/memory.h"
-	"wx/math.h"
-	"wx/stopwatch.h"
-	"wx/timer.h"
-	"wx/module.h"
-	"wx/wxcrt.h"
-	"wx/wxcrtvararg.h"
-	"wx/window.h"
-	"wx/containr.h"
-	"wx/panel.h"
-	"wx/toplevel.h"
-	"wx/frame.h"
-	"wx/gdicmn.h"
-	"wx/gdiobj.h"
-	"wx/region.h"
-	"wx/bitmap.h"
-	"wx/image.h"
-	"wx/colour.h"
-	"wx/font.h"
-	"wx/dc.h"
-	"wx/dcclient.h"
-	"wx/dcmemory.h"
-	"wx/dcprint.h"
-	"wx/dcscreen.h"
-	"wx/button.h"
-	"wx/menuitem.h"
-	"wx/menu.h"
-	"wx/pen.h"
-	"wx/brush.h"
-	"wx/palette.h"
-	"wx/icon.h"
-	"wx/cursor.h"
-	"wx/dialog.h"
-	"wx/settings.h"
-	"wx/msgdlg.h"
-	"wx/dataobj.h"
-	"wx/control.h"
-	"wx/ctrlsub.h"
-	"wx/bmpbuttn.h"
-	"wx/checkbox.h"
-	"wx/checklst.h"
-	"wx/choice.h"
-	"wx/scrolbar.h"
-	"wx/stattext.h"
-	"wx/statbmp.h"
-	"wx/statbox.h"
-	"wx/listbox.h"
-	"wx/radiobox.h"
-	"wx/radiobut.h"
-	"wx/textctrl.h"
-	"wx/slider.h"
-	"wx/gauge.h"
-	"wx/scrolwin.h"
-	"wx/dirdlg.h"
-	"wx/toolbar.h"
-	"wx/combobox.h"
-	"wx/layout.h"
-	"wx/sizer.h"
-	"wx/statusbr.h"
-	"wx/choicdlg.h"
-	"wx/textdlg.h"
-	"wx/filedlg.h"
-	"wx/mdi.h"
-	"wx/validate.h"
-	"wx/valtext.h"
-
-1491890964 /usr/include/wx-3.0/wx/hash.h
-	"wx/defs.h"
-	"wx/string.h"
-	"wx/object.h"
 
 1491890964 /usr/include/wx-3.0/wx/stream.h
 	"wx/defs.h"
@@ -1640,82 +1631,6 @@
 1491890964 /usr/include/wx-3.0/wx/gtk/mdi.h
 	"wx/frame.h"
 
-1491890964 /usr/include/wx-3.0/wx/statline.h
-	"wx/defs.h"
-	"wx/control.h"
-	"wx/univ/statline.h"
-	"wx/msw/statline.h"
-	"wx/gtk/statline.h"
-	"wx/gtk1/statline.h"
-	"wx/os2/statline.h"
-	"wx/osx/statline.h"
-	"wx/cocoa/statline.h"
-	"wx/generic/statline.h"
-
-1491890964 /usr/include/wx-3.0/wx/gtk/statline.h
-	"wx/defs.h"
-
-1520151485 source:/user/joshua/Tether/TetherMain.cpp
-	"wx_pch.h"
-	"TetherMain.h"
-
-1520478884 /home/joshua/Tether/TetherMain.h
-	<wx/wx.h>
-	"TetherApp.h"
-	<wx/button.h>
-	<wx/statline.h>
-
-1520480515 source:/home/joshua/Tether/TetherMain.cpp
-	"wx_pch.h"
-	"TetherMain.h"
-
-1520507552 /home/joshua/Tether/TetherFrame.h
-	<wx/wx.h>
-	"TetherApp.h"
-
-1521873036 source:/home/joshua/Tether/src/TetherApp.cpp
-	<wx/wx.h>
-	"wx_pch.h"
-	"TetherApp.h"
-	"TetherFrame.h"
-
-1520569062 /home/joshua/Tether/include/TetherApp.h
-	<wx/wx.h>
-
-1521966135 /home/joshua/Tether/include/TetherFrame.h
-	"TetherTextCtrl.h"
-	"TetherFileFrame.h"
-	<wx/wx.h>
-
-1521887209 source:/home/joshua/Tether/src/TetherFrame.cpp
-	"TetherFrame.h"
-	"TetherTextCtrl.h"
-	"TetherFileFrame.h"
-
-1521626205 source:/home/joshua/Tether/src/TetherTextCtrl.cpp
-	"TetherTextCtrl.h"
-
-1521626205 /home/joshua/Tether/include/TetherTextCtrl.h
-	<wx/wx.h>
-
-1521868658 /home/joshua/Tether/include/TetherMenu.h
-	<wx/wx.h>
-
-1521623309 source:/home/joshua/Tether/src/TetherMenu.cpp
-	"TetherMenu.h"
-
-1521965470 source:/home/joshua/Tether/src/TetherFileFrame.cpp
-	"TetherFileFrame.h"
-
-1522402709 /home/joshua/Tether/include/TetherFileFrame.h
-	<wx/wx.h>
-
-1524377351 source:/home/joshua/FinalApp/Tether/src/TetherApp.cpp
-	<wx/wx.h>
-	"wx_pch.h"
-	"TetherApp.h"
-	"TetherFrame.h"
-
 1523925975 /home/joshua/FinalApp/Tether/include/TetherApp.h
 	<wx/app.h>
 
@@ -1731,24 +1646,6 @@
 
 1523090941 /home/joshua/FinalApp/Tether/include/TetherTextCtrl.h
 	<wx/stc/stc.h>
-
-1523091726 /home/joshua/FinalApp/Tether/include/TetherFileFrame.h
-	<wx/frame.h>
-	<wx/filedlg.h>
-
-1524989631 source:/home/joshua/FinalApp/Tether/src/TetherTextCtrl.cpp
-	"TetherTextCtrl.h"
-
-1524989631 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
-	"TetherFileFrame.h"
-
-1524985424 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
-	<string>
-	"TetherFrame.h"
-	"TetherTextCtrl.h"
-	"TetherFileFrame.h"
-	"imgs/UndoImage.xpm"
-	"imgs/RedoImage.xpm"
 
 1491890964 /usr/include/wx-3.0/wx/stc/stc.h
 	"wx/defs.h"
@@ -1775,16 +1672,9 @@
 1491890964 /usr/include/wx-3.0/wx/gtk/dnd.h
 	"wx/icon.h"
 
-1523091216 source:/home/joshua/FinalApp/Tether/src/TetherOptionsFrame.cpp
-	"TetherOptionsFrame.h"
-
-1523091462 /home/joshua/FinalApp/Tether/include/TetherOptionsFrame.h
-
-1524375866 /home/joshua/FinalApp/Tether/include/Untitled.xpm
-
-1524983985 /home/joshua/FinalApp/Tether/include/imgs/UndoImage.xpm
-
-1524983980 /home/joshua/FinalApp/Tether/include/imgs/RedoImage.xpm
+1523091726 /home/joshua/FinalApp/Tether/include/TetherFileFrame.h
+	<wx/frame.h>
+	<wx/filedlg.h>
 
 1524988475 /home/joshua/FinalApp/Tether/include/TetherOptionsDialogue.h
 	<wx/propdlg.h>
@@ -1797,6 +1687,24 @@
 	"wx/defs.h"
 	"wx/dialog.h"
 
+1524989631 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
+	"TetherFileFrame.h"
+
+1524990528 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
+	<string>
+	"TetherFrame.h"
+	"TetherTextCtrl.h"
+	"TetherFileFrame.h"
+	"imgs/UndoImage.xpm"
+	"imgs/RedoImage.xpm"
+
+1524991057 /home/joshua/FinalApp/Tether/include/imgs/UndoImage.xpm
+
+1524991057 /home/joshua/FinalApp/Tether/include/imgs/RedoImage.xpm
+
 1524989806 source:/home/joshua/FinalApp/Tether/src/TetherOptionsDialogue.cpp
 	"TetherOptionsDialogue.h"
+
+1524989631 source:/home/joshua/FinalApp/Tether/src/TetherTextCtrl.cpp
+	"TetherTextCtrl.h"
 
