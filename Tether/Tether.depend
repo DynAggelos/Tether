@@ -1710,7 +1710,7 @@
 1522402709 /home/joshua/Tether/include/TetherFileFrame.h
 	<wx/wx.h>
 
-1521873036 source:/home/joshua/FinalApp/Tether/src/TetherApp.cpp
+1524377351 source:/home/joshua/FinalApp/Tether/src/TetherApp.cpp
 	<wx/wx.h>
 	"wx_pch.h"
 	"TetherApp.h"
@@ -1719,9 +1719,10 @@
 1523925975 /home/joshua/FinalApp/Tether/include/TetherApp.h
 	<wx/app.h>
 
-1524374855 /home/joshua/FinalApp/Tether/include/TetherFrame.h
+1524988043 /home/joshua/FinalApp/Tether/include/TetherFrame.h
 	"TetherTextCtrl.h"
 	"TetherFileFrame.h"
+	"TetherOptionsDialogue.h"
 	<wx/frame.h>
 	<wx/msgdlg.h>
 	<wx/menu.h>
@@ -1735,17 +1736,19 @@
 	<wx/frame.h>
 	<wx/filedlg.h>
 
-1523090994 source:/home/joshua/FinalApp/Tether/src/TetherTextCtrl.cpp
+1524989631 source:/home/joshua/FinalApp/Tether/src/TetherTextCtrl.cpp
 	"TetherTextCtrl.h"
 
-1522483569 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
+1524989631 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
 	"TetherFileFrame.h"
 
-1524376950 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
+1524985424 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
+	<string>
 	"TetherFrame.h"
 	"TetherTextCtrl.h"
 	"TetherFileFrame.h"
-	"Untitled.xpm"
+	"imgs/UndoImage.xpm"
+	"imgs/RedoImage.xpm"
 
 1491890964 /usr/include/wx-3.0/wx/stc/stc.h
 	"wx/defs.h"
@@ -1778,4 +1781,22 @@
 1523091462 /home/joshua/FinalApp/Tether/include/TetherOptionsFrame.h
 
 1524375866 /home/joshua/FinalApp/Tether/include/Untitled.xpm
+
+1524983985 /home/joshua/FinalApp/Tether/include/imgs/UndoImage.xpm
+
+1524983980 /home/joshua/FinalApp/Tether/include/imgs/RedoImage.xpm
+
+1524988475 /home/joshua/FinalApp/Tether/include/TetherOptionsDialogue.h
+	<wx/propdlg.h>
+	<wx/checkbox.h>
+
+1491890964 /usr/include/wx-3.0/wx/propdlg.h
+	"wx/generic/propdlg.h"
+
+1491890964 /usr/include/wx-3.0/wx/generic/propdlg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+
+1524989806 source:/home/joshua/FinalApp/Tether/src/TetherOptionsDialogue.cpp
+	"TetherOptionsDialogue.h"
 

@@ -7,11 +7,14 @@
  * License:
  *************************************************************************/
 
+#include <string>
+
 #include "TetherFrame.h"
 #include "TetherTextCtrl.h"
 #include "TetherFileFrame.h"
 
-#include "Untitled.xpm"
+#include "imgs/UndoImage.xpm"
+#include "imgs/RedoImage.xpm"
 
 /* Constructor: TetherFrame() *********************************************
  * Creates and binds all the elements of the main window frame in the app.
@@ -42,13 +45,15 @@ TetherFrame::TetherFrame()
 
     /* Bind Events */
     // Frame Binding
-    Bind(wxEVT_CLOSE_WINDOW, &TetherFrame::OnClose, this);
+    Bind(wxEVT_CLOSE_WINDOW, &TetherFrame::OnClose, this, wxID_CLOSE);
 
     // Menu Bindings
     Bind(wxEVT_MENU, &TetherFrame::onNewFile, this, wxID_NEW);
     Bind(wxEVT_MENU, &TetherFrame::onOpenFile, this, wxID_OPEN);
     Bind(wxEVT_MENU, &TetherFrame::onSaveFile, this, wxID_SAVE);
     Bind(wxEVT_MENU, &TetherFrame::onSaveAsFile, this, wxID_SAVEAS);
+    Bind(wxEVT_MENU, &TetherFrame::onUndoTextAction, this, wxID_UNDO);
+    Bind(wxEVT_MENU, &TetherFrame::onRedoTextAction, this, wxID_REDO);
 }
 
 /* Destructor: ~TetherFrame() *********************************************
@@ -105,16 +110,27 @@ void TetherFrame::createMenu()
 void TetherFrame::createToolbar()
 {
     /* Instantiate Toolbar Bitmaps */
-    toolBitmaps[0] = new wxBitmap(Untitled_xpm);
+    //toolBitmap = new wxBitmap(RedoImage_xpm);
+    wxBitmap undoBitmap(UndoImage_xpm);      // Only declared here, not in H
+    wxBitmap redoBitmap(RedoImage_xpm);      // Only declared here, not in H
 
     /* Instantiate Toolbar */
-    toolbar = this->CreateToolBar(wxTB_DEFAULT_STYLE | wxTB_TOP);
-    toolbar->AddTool(
-        wxID_ANY,
-        _("Undo"),
-        (const char**) toolBitmaps[0],
-        _("Undo operation"));
+    toolbar = this->CreateToolBar(
+        wxTB_DEFAULT_STYLE
+        | wxTB_TOP
+        | wxTB_HORZ_TEXT);
     
+    toolbar->AddTool(
+        wxID_UNDO,
+        _("Undo"),
+        undoBitmap,
+        _("Undo operation"));
+    toolbar->AddTool(
+        wxID_REDO,
+        _("Redo"),
+        redoBitmap,
+        _("Redo operation"));
+
     /* Display Toolbar */
     toolbar->Realize();
 }
@@ -128,10 +144,50 @@ void TetherFrame::createToolbar()
  *************************************************************************/
 void TetherFrame::onNewFile(const wxCommandEvent& event)
 {
-    textBox1->ClearAll();
+    /* Initialization ****************************************************/
+    std::string noticeBoxDialogue = (
+        "Changes are unsaved.\n"
+        "Are you sure you want to clear the window of text?");
+    int buttonChoice = 0;
+
+    /* Processing ********************************************************/
+    /* If Text Modified/Unsaved -----------------------------------------*/
     if (textBox1->IsModified())
     {
-        textBox1->DiscardEdits();
+        /* Display Warning of Unsaved Content */
+        noticeBox = new wxMessageDialog(
+            this,
+            _(noticeBoxDialogue),
+            wxMessageBoxCaptionStr,
+            wxYES_NO | wxICON_WARNING | wxCENTRE);
+
+        buttonChoice = noticeBox->ShowModal();
+
+        /* Actions to Take Upon Selection Choice */
+        if (buttonChoice == wxID_YES)
+        {
+            // Clear textBox1
+            textBox1->ClearAll();           // Clear textBox1 Text
+            textBox1->DiscardEdits();       // Clear Unsaved Edits Flag
+            textBox1->EmptyUndoBuffer();    // Clear Undo Buffer
+
+            // Clear Memory of noticeBox
+            delete noticeBox;
+            noticeBox = nullptr;
+        }
+
+        else
+        {
+            // Clear Memory of noticeBox
+            delete noticeBox;
+            noticeBox = nullptr;
+        }
+    }
+
+    /* If Text Unmodified/Saved -----------------------------------------*/
+    else
+    {
+        textBox1->ClearAll();
     }
 }
 
@@ -145,17 +201,22 @@ void TetherFrame::onNewFile(const wxCommandEvent& event)
  *************************************************************************/
 void TetherFrame::onOpenFile(const wxCommandEvent& event)
 {
+    /* Initialization ****************************************************/
+    std::string noticeBoxDialogue = (
+        "There are unsaved changes at the moment.");
+
+    /* Processing ********************************************************/
     /* Warning Box if Unsaved Content */
     if (textBox1->IsModified())
     {
         noticeBox = new wxMessageDialog(
             this,
-            _("There are unsaved changes at the moment."),
+            _(noticeBoxDialogue),
             wxMessageBoxCaptionStr,
             wxOK | wxICON_WARNING | wxCENTRE);
         noticeBox->ShowModal();
 
-        // Clear Memory Once Selection Chosen
+        // Clear Memory Once Any Selection Chosen
         delete noticeBox;
         noticeBox = nullptr;
     }
@@ -251,6 +312,40 @@ void TetherFrame::onSaveAsFile(const wxCommandEvent& event)
     else
     {
         textBox1->SaveFile(filePath);
+    }
+}
+
+/* Member Function: onUndoTextAction() ************************************
+ * Removes the last change in the buffer from the text.
+ *-------------------------------------------------------------------------
+ * Parameters:
+ *      event -- A parameter required by wxWidgets
+ * Returns: void
+ *************************************************************************/
+void TetherFrame::onUndoTextAction(const wxCommandEvent& event)
+{
+    /* Processing ********************************************************/
+    /* If Undo Possible -------------------------------------------------*/
+    if (textBox1->CanUndo())
+    {
+        textBox1->Undo();
+    }
+}
+
+/* Member Function: onRedoTextAction() ************************************
+ * Adds the next change in the buffer back to the text.
+ *-------------------------------------------------------------------------
+ * Parameters:
+ *      event -- A parameter required by wxWidgets
+ * Returns: void
+ *************************************************************************/
+void TetherFrame::onRedoTextAction(const wxCommandEvent& event)
+{
+    /* Processing ********************************************************/
+    /* If Redo Possible -------------------------------------------------*/
+    if (textBox1->CanRedo())
+    {
+        textBox1->Redo();
     }
 }
 

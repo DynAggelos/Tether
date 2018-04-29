@@ -11,6 +11,7 @@
 
 #include "TetherTextCtrl.h"
 #include "TetherFileFrame.h"
+#include "TetherOptionsDialogue.h"
 
 #ifndef WX_FRAME
 #   include <wx/frame.h>
@@ -45,6 +46,12 @@ class TetherFrame : public wxFrame
         wxMenu* fileMenu = nullptr;
         wxMenu* toolsMenu = nullptr;
 
+        // Bitmap Pointers
+        //wxBitmap* toolBitmap = nullptr;
+
+        // Toolbar Pointers
+        wxToolBar* toolbar = nullptr;
+
         // Text Box Pointers
         TetherTextCtrl* textBox1 = nullptr;
         TetherTextCtrl* textBox2 = nullptr;
@@ -54,14 +61,12 @@ class TetherFrame : public wxFrame
 
         // Dialogue Pointers
         wxMessageDialog* noticeBox = nullptr;
+        wxPropertySheetDialog* propertyDialogue = nullptr;
 
-        // Bitmap Pointers
-        wxBitmap* toolBitmaps[3] = {nullptr, nullptr, nullptr};
+        // Frame Pointers
+        wxFrame* optionsFrame = nullptr;
 
-        // Toolbar Pointers
-        wxToolBar* toolbar = nullptr;
-
-        /* Objects (in Stack) */
+        /* Object Identifiers (in Stack) */
         wxString filePath;
         wxString textBox1LoadPath;
 
@@ -70,9 +75,16 @@ class TetherFrame : public wxFrame
         void createToolbar();
 
         /* Event-Handling Member Functions */
+        // Menu
         void onNewFile(const wxCommandEvent& event);
         void onOpenFile(const wxCommandEvent& event);
         void onSaveFile(const wxCommandEvent& event);
         void onSaveAsFile(const wxCommandEvent& event);
+
+        // Toolbar
+        void onUndoTextAction(const wxCommandEvent& event);
+        void onRedoTextAction(const wxCommandEvent& event);
+
+        // Close
         void OnClose(const wxCloseEvent& event);
 };

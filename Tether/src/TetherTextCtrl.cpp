@@ -9,6 +9,16 @@
 
 #include "TetherTextCtrl.h"
 
+/* Constructor: TetherTextCtrl() ******************************************
+ * Creates and sets up a text control element.
+ *-------------------------------------------------------------------------
+ * Parameters:
+ *      parent -- The parent window class this window is associated with
+ *      id -- The id of this window
+ *      position -- The default position of the window
+ *      size -- The default size of the window
+ * Returns: void
+ *************************************************************************/
 TetherTextCtrl::TetherTextCtrl(
     wxWindow* parent,
     const int& id,
@@ -34,5 +44,11 @@ TetherTextCtrl::TetherTextCtrl(
     this->SetWrapVisualFlags(wxSTC_WRAPVISUALFLAG_MARGIN);
 }
 
+/* Destructor: ~TetherTextCtrl() ******************************************
+ * An empty destructor.
+ *-------------------------------------------------------------------------
+ * Parameters: void
+ * Returns: void
+ *************************************************************************/
 TetherTextCtrl::~TetherTextCtrl()
 {}

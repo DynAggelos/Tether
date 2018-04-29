@@ -52,8 +52,15 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 #include "TetherApp.h"
 #include "TetherFrame.h"
 
-wxIMPLEMENT_APP(TetherApp);
+wxIMPLEMENT_APP(TetherApp);     // Bind TetherApp to wx startup process
 
+/* Member Function: OnInit() **********************************************
+ * Automatically called by wxWidgets once library setup is complete. This
+ * is essentially the apps "main".
+ *-------------------------------------------------------------------------
+ * Parameters: void
+ * Returns: (true)
+ *************************************************************************/
 bool TetherApp::OnInit()
 {
     /* Set Up Handlers */
