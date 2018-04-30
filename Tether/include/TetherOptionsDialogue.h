@@ -13,6 +13,10 @@
 #   include <wx/propdlg.h>
 #endif // WX_PROPDLG
 
+#ifndef WX_PANEL
+#   include <wx/panel.h>
+#endif // WX_PANEL
+
 #ifndef WX_CHECKBOX
 #   include <wx/checkbox.h>
 #endif // WX_CHECKBOX

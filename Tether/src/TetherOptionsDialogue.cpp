@@ -36,7 +36,17 @@ TetherOptionsDialogue::TetherOptionsDialogue(
         size,
         style)
 {
-    //ctor
+    this->Create(
+        this,
+        wxID_ANY,
+        _("Options"));
+
+    this->CreateButtons(wxOK|wxCANCEL|wxHELP);
+
+    // Add page
+    wxPanel* panel = new wxPanel(this->GetBookCtrl());
+    this->GetBookCtrl()->AddPage(panel, "General");
+    this->LayoutDialog();
 }
 
 /* Destructor: ~TetherOptionsDialogue() ***********************************

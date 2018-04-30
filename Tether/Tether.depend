@@ -1676,8 +1676,9 @@
 	<wx/frame.h>
 	<wx/filedlg.h>
 
-1524988475 /home/joshua/FinalApp/Tether/include/TetherOptionsDialogue.h
+1525118315 /home/joshua/FinalApp/Tether/include/TetherOptionsDialogue.h
 	<wx/propdlg.h>
+	<wx/panel.h>
 	<wx/checkbox.h>
 
 1491890964 /usr/include/wx-3.0/wx/propdlg.h
