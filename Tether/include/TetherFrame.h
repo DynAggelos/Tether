@@ -63,8 +63,8 @@ class TetherFrame : public wxFrame
         wxMessageDialog* noticeBox = nullptr;
         wxPropertySheetDialog* propertyDialogue = nullptr;
 
-        // Frame Pointers
-        wxFrame* optionsFrame = nullptr;
+        // Property Sheet Pointers
+        wxPropertySheetDialog* optionsFrame = nullptr;
 
         /* Object Identifiers (in Stack) */
         wxString filePath;
@@ -80,6 +80,7 @@ class TetherFrame : public wxFrame
         void onOpenFile(const wxCommandEvent& event);
         void onSaveFile(const wxCommandEvent& event);
         void onSaveAsFile(const wxCommandEvent& event);
+        void onSettings(const wxCommandEvent& event);
 
         // Toolbar
         void onUndoTextAction(const wxCommandEvent& event);

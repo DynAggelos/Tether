@@ -10,8 +10,6 @@
 #include <string>
 
 #include "TetherFrame.h"
-#include "TetherTextCtrl.h"
-#include "TetherFileFrame.h"
 
 #include "imgs/UndoImage.xpm"
 #include "imgs/RedoImage.xpm"
@@ -52,6 +50,7 @@ TetherFrame::TetherFrame()
     Bind(wxEVT_MENU, &TetherFrame::onOpenFile, this, wxID_OPEN);
     Bind(wxEVT_MENU, &TetherFrame::onSaveFile, this, wxID_SAVE);
     Bind(wxEVT_MENU, &TetherFrame::onSaveAsFile, this, wxID_SAVEAS);
+    Bind(wxEVT_MENU, &TetherFrame::onSettings, this, wxID_PREFERENCES);
     Bind(wxEVT_MENU, &TetherFrame::onUndoTextAction, this, wxID_UNDO);
     Bind(wxEVT_MENU, &TetherFrame::onRedoTextAction, this, wxID_REDO);
 }
@@ -119,7 +118,7 @@ void TetherFrame::createToolbar()
         wxTB_DEFAULT_STYLE
         | wxTB_TOP
         | wxTB_HORZ_TEXT);
-    
+
     toolbar->AddTool(
         wxID_UNDO,
         _("Undo"),
@@ -313,6 +312,25 @@ void TetherFrame::onSaveAsFile(const wxCommandEvent& event)
     {
         textBox1->SaveFile(filePath);
     }
+}
+
+/* Member Function: onSettings() ******************************************
+ * Creates a settings window that allows the user to manipulate how the
+ * program works.
+ *-------------------------------------------------------------------------
+ * Parameters:
+ *      event -- A parameter required by wxWidgets
+ * Returns: void
+ *************************************************************************/
+void TetherFrame::onSettings(const wxCommandEvent& event)
+{
+    /*optionsFrame = new TetherOptionsDialogue(
+        this,
+        wxID_ANY,
+        _("Settings"),
+        wxDefaultPosition,
+        wxDefaultSize,
+        wxDEFAULT_DIALOG_STYLE | wxSTAY_ON_TOP);*/
 }
 
 /* Member Function: onUndoTextAction() ************************************

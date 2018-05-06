@@ -17,6 +17,10 @@
 #   include <wx/panel.h>
 #endif // WX_PANEL
 
+#ifndef WX_BOOK_CTRL
+#   include <wx/bookctrl.h>
+#endif // WX_BOOK_CTRL
+
 #ifndef WX_CHECKBOX
 #   include <wx/checkbox.h>
 #endif // WX_CHECKBOX

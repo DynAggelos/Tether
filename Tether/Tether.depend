@@ -1634,7 +1634,7 @@
 1523925975 /home/joshua/FinalApp/Tether/include/TetherApp.h
 	<wx/app.h>
 
-1524988043 /home/joshua/FinalApp/Tether/include/TetherFrame.h
+1525399120 /home/joshua/FinalApp/Tether/include/TetherFrame.h
 	"TetherTextCtrl.h"
 	"TetherFileFrame.h"
 	"TetherOptionsDialogue.h"
@@ -1676,9 +1676,10 @@
 	<wx/frame.h>
 	<wx/filedlg.h>
 
-1525118315 /home/joshua/FinalApp/Tether/include/TetherOptionsDialogue.h
+1525573045 /home/joshua/FinalApp/Tether/include/TetherOptionsDialogue.h
 	<wx/propdlg.h>
 	<wx/panel.h>
+	<wx/bookctrl.h>
 	<wx/checkbox.h>
 
 1491890964 /usr/include/wx-3.0/wx/propdlg.h
@@ -1691,11 +1692,9 @@
 1524989631 source:/home/joshua/FinalApp/Tether/src/TetherFileFrame.cpp
 	"TetherFileFrame.h"
 
-1524990528 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
+1525399057 source:/home/joshua/FinalApp/Tether/src/TetherFrame.cpp
 	<string>
 	"TetherFrame.h"
-	"TetherTextCtrl.h"
-	"TetherFileFrame.h"
 	"imgs/UndoImage.xpm"
 	"imgs/RedoImage.xpm"
 
@@ -1703,9 +1702,56 @@
 
 1524991057 /home/joshua/FinalApp/Tether/include/imgs/RedoImage.xpm
 
-1524989806 source:/home/joshua/FinalApp/Tether/src/TetherOptionsDialogue.cpp
+1525573046 source:/home/joshua/FinalApp/Tether/src/TetherOptionsDialogue.cpp
 	"TetherOptionsDialogue.h"
 
 1524989631 source:/home/joshua/FinalApp/Tether/src/TetherTextCtrl.cpp
 	"TetherTextCtrl.h"
+
+1491890964 /usr/include/wx-3.0/wx/bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1491890964 /usr/include/wx-3.0/wx/withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1491890964 /usr/include/wx-3.0/wx/imaglist.h
+	"wx/defs.h"
+	"wx/generic/imaglist.h"
+	"wx/msw/imaglist.h"
+	"wx/osx/imaglist.h"
+
+1491890964 /usr/include/wx-3.0/wx/generic/imaglist.h
+	"wx/list.h"
+
+1491890964 /usr/include/wx-3.0/wx/notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/cocoa/notebook.h"
+	"wx/os2/notebook.h"
+
+1491890964 /usr/include/wx-3.0/wx/generic/notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1491890964 /usr/include/wx-3.0/wx/gtk/notebook.h
+	"wx/list.h"
+
+1491890964 /usr/include/wx-3.0/wx/choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
 

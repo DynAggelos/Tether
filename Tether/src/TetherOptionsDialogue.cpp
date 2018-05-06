@@ -37,15 +37,18 @@ TetherOptionsDialogue::TetherOptionsDialogue(
         style)
 {
     this->Create(
-        this,
+        parent,
         wxID_ANY,
         _("Options"));
 
-    this->CreateButtons(wxOK|wxCANCEL|wxHELP);
+    this->CreateButtons(wxOK | wxCANCEL);
 
-    // Add page
-    wxPanel* panel = new wxPanel(this->GetBookCtrl());
-    this->GetBookCtrl()->AddPage(panel, "General");
+    wxBookCtrlBase* notebook = GetBookCtrl();
+    
+    wxPanel* panel = new wxPanel(notebook);
+
+    GetBookCtrl()->AddPage(panel, "General");
+    
     this->LayoutDialog();
 }
 
